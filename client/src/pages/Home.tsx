@@ -716,7 +716,7 @@ function HotelCard({
   return (
     <Card className="overflow-hidden border-border luxury-shadow hover:shadow-xl transition-all duration-400 bg-card">
       {/* Layout de Revista - Imagen grande */}
-      <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden w-full">
+      <div className="relative h-80 sm:h-96 md:h-[500px] lg:h-[600px] overflow-hidden w-full">
         <img
           src={imagenPrincipal}
           alt={nombre}
@@ -794,7 +794,7 @@ function HotelCard({
         <p className="text-foreground/85 leading-relaxed text-sm sm:text-base pt-2">{descripcion}</p>
         
         {/* Imagen de habitación pequeña como preview */}
-        <div className="relative h-40 sm:h-48 overflow-hidden rounded-lg mt-4">
+        <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden rounded-lg mt-4">
           <img
             src={imagenHabitacion}
             alt={`${tipo} - ${nombre}`}
