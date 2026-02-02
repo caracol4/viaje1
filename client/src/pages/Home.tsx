@@ -258,7 +258,7 @@ function ItinerarioSection() {
       fecha: "Sábado 17 de octubre",
       titulo: "Llegada a Milán",
       ciudad: "Milán",
-      imagen: "/images/nNxu2SwmZVLz.jpg",
+      imagen: "/images/catedral-milan.jpeg",
       descripcion:
         "Paseo de orientación por la ciudad y visita a la Catedral (Duomo) de Milán.",
       entradas: "Catedral (Duomo)",
@@ -278,7 +278,7 @@ function ItinerarioSection() {
       fecha: "Lunes 19 de octubre",
       titulo: "Milán y Serravalle",
       ciudad: "Milán",
-      imagen: "/images/nNxu2SwmZVLz.jpg",
+      imagen: "/images/serravalle.jpg",
       descripcion:
         "Visita e inclusión de entrada a la Pinacoteca de Brera. Posteriormente, jornada de compras en Serravalle Designer Outlet y tarde libre para seguir conociendo la ciudad.",
       entradas: "Pinacoteca de Brera",
