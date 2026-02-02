@@ -288,11 +288,12 @@ function ItinerarioSection() {
       fecha: "Martes 20 de octubre",
       titulo: "Milán → Lago di Como",
       ciudad: "Como",
-      imagen: "/images/bianca.jpg",
+      imagen: "/images/qcQ100Yu607o.jpg",
       km: "50 km",
       tiempo: "30 min",
       descripcion:
-        "Traslado al Lago di Como y llegada al hotel frente al agua. Un refugio exclusivo de la aristocracia europea.",
+        "Check-in. Visita de los alrededores: Menaggio y Villa Carlotta (jardines botánicos).",
+      entradas: "Villa Carlotta y jardines botánicos",
     },
     {
       dia: 16,
@@ -301,22 +302,12 @@ function ItinerarioSection() {
       ciudad: "Lago di Como",
       imagen: "/images/como.webp",
       descripcion:
-        "Navegación hacia Bellagio y Varenna, perlas del lago con elegancia atemporal, disfrutando del máximo glamour desde el agua.",
-      entradas: "Alquiler de lancha motora privada con capitán",
+        "Navegación hacia Bellagio y Varenna, perlas del lago con elegancia atemporal.",
+      entradas: "Alquiler de lancha motora privada con capitán (Charter privado)",
     },
     {
       dia: 17,
       fecha: "Jueves 22 de octubre",
-      titulo: "Menaggio y Villa Carlotta",
-      ciudad: "Menaggio",
-      imagen: "/images/qcQ100Yu607o.jpg",
-      descripcion:
-        "Visita a los jardines de Villa Carlotta. Tarde libre.",
-      entradas: "Villa Carlotta y jardines botánicos",
-    },
-    {
-      dia: 18,
-      fecha: "Viernes 23 de octubre",
       titulo: "Paso del San Gotardo",
       ciudad: "Alpes Suizos",
       imagen: "/images/gotardo.webp",
@@ -328,8 +319,8 @@ function ItinerarioSection() {
       etapaDescripcion: "Paisajes alpinos y precisión helvética."
     },
     {
-      dia: 19,
-      fecha: "Sábado 24 de octubre",
+      dia: 18,
+      fecha: "Viernes 23 de octubre",
       titulo: "Lucerna",
       ciudad: "Lucerna",
       imagen: "/images/sMucKYaSFmFJ.webp",
@@ -337,8 +328,8 @@ function ItinerarioSection() {
         "Lucerna fue el refugio predilecto de la realeza del siglo XIX; la Reina Victoria de Inglaterra la eligió para su descanso, consolidándola como el destino más aristocrático de los Alpes. Tarde libre para compras.",
     },
     {
-      dia: 20,
-      fecha: "Domingo 25 de octubre",
+      dia: 19,
+      fecha: "Sábado 24 de octubre",
       titulo: "Monte Pilatus",
       ciudad: "Lucerna",
       imagen: "/images/pilatus.jpg",
@@ -347,8 +338,8 @@ function ItinerarioSection() {
       entradas: "Tickets tren cremallera / teleférico Monte Pilatus",
     },
     {
-      dia: 21,
-      fecha: "Lunes 26 de octubre",
+      dia: 20,
+      fecha: "Domingo 25 de octubre",
       titulo: "Lucerna → Zúrich",
       ciudad: "Zúrich",
       imagen: "/images/fyUJyLgiQVx8.jpg",
@@ -358,8 +349,8 @@ function ItinerarioSection() {
         "Zúrich destaca por su elegancia urbana y exclusividad, ofreciendo una calidad de vida inigualable a orillas del agua.",
     },
     {
-      dia: 22,
-      fecha: "Martes 27 de octubre",
+      dia: 21,
+      fecha: "Lunes 26 de octubre",
       titulo: "Cataratas del Rin y compras",
       ciudad: "Zúrich",
       imagen: "/images/rin.jpg",
@@ -370,8 +361,8 @@ function ItinerarioSection() {
       entradas: "Acceso miradores Cataratas del Rin",
     },
     {
-      dia: 23,
-      fecha: "Miércoles 28 de octubre",
+      dia: 22,
+      fecha: "Martes 27 de octubre",
       titulo: "Zúrich relax",
       ciudad: "Zúrich",
       imagen: "/images/zurich1.jpg",
@@ -379,8 +370,8 @@ function ItinerarioSection() {
         "Día de relax y últimas compras. En esta jornada nos despedimos del guía para que disfruten de total independencia.",
     },
     {
-      dia: 24,
-      fecha: "Jueves 29 al sábado 31 de octubre",
+      dia: 23,
+      fecha: "Miércoles 28 al viernes 30 de octubre",
       titulo: "Regreso a Madrid y Guatemala",
       ciudad: "Madrid",
       imagen: "/images/xpT2XAj2YaiN.jpg",
@@ -568,13 +559,13 @@ function HotelesSection() {
       estrellas: 4,
       ciudad: "Madrid",
       ubicacion: "Centro - Gran Vía",
-      tipo: "Corner Junior Suite",
+      tipo: "Deluxe Junior Suite",
       fechaInicio: "06/10/2026",
       fechaFin: "09/10/2026",
       descripcion:
         "Un emblema de la elegancia clásica en la arteria más vibrante de Madrid. Su espectacular 'Beach Club' en la azotea ofrece la piscina más icónica del centro y vistas inigualables del skyline madrileño.",
       imagenPrincipal: "/images/emperador-fachada.jpg",
-      imagenHabitacion: "/images/emperador-hab.jpg",
+      imagenHabitacion: "/images/emperador-hab2.jpg",
     },
     {
       nombre: "Grimaldi Lines",
@@ -672,13 +663,13 @@ function HotelesSection() {
       estrellas: 4,
       ciudad: "Madrid",
       ubicacion: "Centro - Gran Vía",
-      tipo: "Habitación Doble Superior",
+      tipo: "Deluxe Junior Suite",
       fechaInicio: "27/10/2026",
       fechaFin: "29/10/2026",
       descripcion:
-        "Regreso al emblemático Hotel Emperador para las noches finales del viaje. Habitación Doble Superior con todas las comodidades para descansar antes del vuelo de regreso, con acceso al icónico 'Beach Club' en la azotea.",
+        "Regreso al emblemático Hotel Emperador para las noches finales del viaje. Deluxe Junior Suite con todas las comodidades para descansar antes del vuelo de regreso, con acceso al icónico 'Beach Club' en la azotea.",
       imagenPrincipal: "/images/emperador-fachada.jpg",
-      imagenHabitacion: "/images/emperador-hab.jpg",
+      imagenHabitacion: "/images/emperador-hab2.jpg",
     },
   ];
 
