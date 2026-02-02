@@ -147,7 +147,6 @@ function ItinerarioSection() {
       descripcion:
         "Salida hacia Toledo y llegada directa al casco histórico. Conocida como la 'Ciudad de las Tres Culturas', es un laberinto medieval de piedra que parece detenido en el tiempo. Su catedral gótica custodia tesoros artísticos incalculables de El Greco y Goya. Regreso a Madrid y tarde libre al final de la jornada.",
       entradas: "Catedral Primada de Toledo",
-      guiaLocal: "Sí (guía oficial de Toledo)",
     },
     {
       dia: 3,
@@ -160,7 +159,6 @@ function ItinerarioSection() {
       descripcion:
         "Traslado matinal a Segovia, famosa por su imponente acueducto romano y su Alcázar. Posteriormente, nos desplazaremos a Las Rozas Village, un exclusivo destino de compras con las mejores firmas de lujo internacionales.",
       entradas: "Alcázar de Segovia y Catedral de Segovia",
-      guiaLocal: "Sí (guía oficial de Segovia)",
     },
     {
       dia: 4,
@@ -209,7 +207,6 @@ function ItinerarioSection() {
       descripcion:
         "Traslado a Siena para visitar la Piazza del Campo y su catedral de mármol. Tarde libre en el hotel o posibilidad de visitar otro pueblo típico como sugerencia adicional.",
       entradas: "Catedral de Siena (Duomo)",
-      guiaLocal: "Sí (guía oficial de Siena)",
     },
     {
       dia: 8,
@@ -259,16 +256,36 @@ function ItinerarioSection() {
     {
       dia: 12,
       fecha: "Sábado 17 de octubre",
-      titulo: "Milán",
+      titulo: "Llegada a Milán",
       ciudad: "Milán",
       imagen: "/images/nNxu2SwmZVLz.jpg",
       descripcion:
-        "Visita al Duomo, Castillo Sforzesco y Galería Vittorio Emanuele II. Haremos lo posible por gestionar entradas para 'La Última Cena'. Tarde libre en el centro para compras. Se ofrece la opción de visitar Serravalle Designer Outlet, el más grande de Europa, con una selección premium de marcas italianas.",
-      entradas: "Catedral (Duomo), Castillo Sforzesco y La Última Cena",
+        "Paseo de orientación por la ciudad y visita a la Catedral (Duomo) de Milán.",
+      entradas: "Catedral (Duomo)",
     },
     {
       dia: 13,
       fecha: "Domingo 18 de octubre",
+      titulo: "Milán",
+      ciudad: "Milán",
+      imagen: "/images/nNxu2SwmZVLz.jpg",
+      descripcion:
+        "Visita al Castello Sforzesco por la mañana. Por la tarde, paseo por el centro histórico y visita a 'La Última Cena' de Da Vinci.",
+      entradas: "Castillo Sforzesco y La Última Cena",
+    },
+    {
+      dia: 14,
+      fecha: "Lunes 19 de octubre",
+      titulo: "Milán y Serravalle",
+      ciudad: "Milán",
+      imagen: "/images/nNxu2SwmZVLz.jpg",
+      descripcion:
+        "Visita e inclusión de entrada a la Pinacoteca de Brera. Posteriormente, jornada de compras en Serravalle Designer Outlet y tarde libre para seguir conociendo la ciudad.",
+      entradas: "Pinacoteca de Brera",
+    },
+    {
+      dia: 15,
+      fecha: "Martes 20 de octubre",
       titulo: "Milán → Lago di Como",
       ciudad: "Como",
       imagen: "/images/bianca.jpg",
@@ -278,8 +295,8 @@ function ItinerarioSection() {
         "Traslado al Lago di Como y llegada al hotel frente al agua. Un refugio exclusivo de la aristocracia europea.",
     },
     {
-      dia: 14,
-      fecha: "Lunes 19 de octubre",
+      dia: 16,
+      fecha: "Miércoles 21 de octubre",
       titulo: "Navegación privada en el lago",
       ciudad: "Lago di Como",
       imagen: "/images/como.webp",
@@ -288,8 +305,8 @@ function ItinerarioSection() {
       entradas: "Alquiler de lancha motora privada con capitán",
     },
     {
-      dia: 15,
-      fecha: "Martes 20 de octubre",
+      dia: 17,
+      fecha: "Jueves 22 de octubre",
       titulo: "Menaggio y Villa Carlotta",
       ciudad: "Menaggio",
       imagen: "/images/qcQ100Yu607o.jpg",
@@ -298,8 +315,8 @@ function ItinerarioSection() {
       entradas: "Villa Carlotta y jardines botánicos",
     },
     {
-      dia: 16,
-      fecha: "Miércoles 21 de octubre",
+      dia: 18,
+      fecha: "Viernes 23 de octubre",
       titulo: "Paso del San Gotardo",
       ciudad: "Alpes Suizos",
       imagen: "/images/gotardo.webp",
@@ -311,8 +328,8 @@ function ItinerarioSection() {
       etapaDescripcion: "Paisajes alpinos y precisión helvética."
     },
     {
-      dia: 17,
-      fecha: "Jueves 22 de octubre",
+      dia: 19,
+      fecha: "Sábado 24 de octubre",
       titulo: "Lucerna",
       ciudad: "Lucerna",
       imagen: "/images/sMucKYaSFmFJ.webp",
@@ -320,8 +337,8 @@ function ItinerarioSection() {
         "Lucerna fue el refugio predilecto de la realeza del siglo XIX; la Reina Victoria de Inglaterra la eligió para su descanso, consolidándola como el destino más aristocrático de los Alpes. Tarde libre para compras.",
     },
     {
-      dia: 18,
-      fecha: "Viernes 23 de octubre",
+      dia: 20,
+      fecha: "Domingo 25 de octubre",
       titulo: "Monte Pilatus",
       ciudad: "Lucerna",
       imagen: "/images/pilatus.jpg",
@@ -330,8 +347,8 @@ function ItinerarioSection() {
       entradas: "Tickets tren cremallera / teleférico Monte Pilatus",
     },
     {
-      dia: 19,
-      fecha: "Sábado 24 de octubre",
+      dia: 21,
+      fecha: "Lunes 26 de octubre",
       titulo: "Lucerna → Zúrich",
       ciudad: "Zúrich",
       imagen: "/images/fyUJyLgiQVx8.jpg",
@@ -341,8 +358,8 @@ function ItinerarioSection() {
         "Zúrich destaca por su elegancia urbana y exclusividad, ofreciendo una calidad de vida inigualable a orillas del agua.",
     },
     {
-      dia: 20,
-      fecha: "Domingo 25 de octubre",
+      dia: 22,
+      fecha: "Martes 27 de octubre",
       titulo: "Cataratas del Rin y compras",
       ciudad: "Zúrich",
       imagen: "/images/rin.jpg",
@@ -353,8 +370,8 @@ function ItinerarioSection() {
       entradas: "Acceso miradores Cataratas del Rin",
     },
     {
-      dia: 21,
-      fecha: "Lunes 26 de octubre",
+      dia: 23,
+      fecha: "Miércoles 28 de octubre",
       titulo: "Zúrich relax",
       ciudad: "Zúrich",
       imagen: "/images/zurich1.jpg",
@@ -362,8 +379,8 @@ function ItinerarioSection() {
         "Día de relax y últimas compras. En esta jornada nos despedimos del guía para que disfruten de total independencia.",
     },
     {
-      dia: 22,
-      fecha: "Martes 27 al jueves 29 de octubre",
+      dia: 24,
+      fecha: "Jueves 29 al sábado 31 de octubre",
       titulo: "Regreso a Madrid y Guatemala",
       ciudad: "Madrid",
       imagen: "/images/xpT2XAj2YaiN.jpg",
@@ -677,6 +694,9 @@ function HotelesSection() {
           habitaciones son de categoría Superior o Suite para garantizar máximo
           confort durante su viaje.
         </p>
+        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mt-4">
+          <strong>Todos los hoteles son contratados con opciones de cancelación.</strong>
+        </p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-8">
@@ -838,14 +858,14 @@ function PresupuestoSection() {
   ];
 
   const entradas = [
-    { lugar: "Toledo", detalle: "Entrada a la Catedral Primada (con guía local oficial)" },
+    { lugar: "Toledo", detalle: "Entrada a la Catedral Primada" },
     {
       lugar: "Segovia",
-      detalle: "Entradas al Alcázar y a la Catedral (con guía local oficial)",
+      detalle: "Entradas al Alcázar y a la Catedral",
     },
     {
       lugar: "Siena",
-      detalle: "Entrada a la Catedral / Duomo (con guía local oficial)",
+      detalle: "Entrada a la Catedral / Duomo",
     },
     {
       lugar: "Toscana",
@@ -859,7 +879,7 @@ function PresupuestoSection() {
     {
       lugar: "Milán",
       detalle:
-        "Entradas al Duomo, Castillo Sforzesco y 'La Última Cena' (sujeto a disponibilidad)",
+        "Entradas al Duomo, Castillo Sforzesco, 'La Última Cena' (sujeto a disponibilidad) y Pinacoteca de Brera",
     },
     {
       lugar: "Lago di Como",
@@ -883,7 +903,7 @@ function PresupuestoSection() {
           Presupuesto y condiciones del viaje
         </h2>
         <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-          Precio basado en el itinerario presentado y los hoteles seleccionados. La idea es verlo juntos y ajustar en función de las demandas que puedan tener, ya que se ha elaborado teniendo en cuenta sus gustos y formas de viajar. Aparte, también revisaremos juntos las entradas y los guías locales para que el resultado final esté totalmente a su gusto.
+          Tras el último ajuste, hemos logrado reducir el coste al eliminar la mayoría de los guías locales. No obstante, hemos incrementado ligeramente la partida hotelera para asegurar reservas con opciones de cancelación flexible. Estas se podrán abonar más adelante, permitiendo realizar ahora únicamente el desembolso de los dos activos más importantes del viaje. Este presupuesto se ha elaborado teniendo en cuenta sus gustos y formas de viajar, y sigue estando abierto a cualquier ajuste final que deseen realizar juntos.
         </p>
       </div>
 
@@ -895,7 +915,7 @@ function PresupuestoSection() {
               Importe total del viaje
             </p>
             <p className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-primary mb-2">
-              29.500 €
+              29.100 €
             </p>
             <p className="text-sm text-muted-foreground">
               Presupuesto para 2 personas
