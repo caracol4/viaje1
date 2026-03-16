@@ -7,7 +7,7 @@
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Clock, Hotel, DollarSign, Mail, Phone, MapPinIcon, Car, Utensils, Ticket, Coffee, RefreshCw, Info, Plane, FileText, AlertCircle } from "lucide-react";
+import { MapPin, Clock, Hotel, DollarSign, Mail, Phone, MapPinIcon, Car, Utensils, Ticket, Coffee, RefreshCw, Info, Plane, FileText, AlertCircle, ExternalLink, CalendarDays, Euro } from "lucide-react";
 import { ImageCarousel } from "@/components/ImageCarousel";
 
 export default function Home() {
@@ -61,6 +61,12 @@ export default function Home() {
               >
                 Presupuesto
               </TabsTrigger>
+              <TabsTrigger
+                value="entradas"
+                className="font-display text-base sm:text-lg px-4 sm:px-8 py-3 sm:py-0 data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none flex-1 sm:flex-initial"
+              >
+                Entradas y Experiencias
+              </TabsTrigger>
             </TabsList>
           </Tabs>
         </div>
@@ -82,6 +88,11 @@ export default function Home() {
           {/* PRESUPUESTO TAB */}
           <TabsContent value="presupuesto" className="mt-0">
             <PresupuestoSection />
+          </TabsContent>
+
+          {/* ENTRADAS Y EXPERIENCIAS TAB */}
+          <TabsContent value="entradas" className="mt-0">
+            <EntradasSection />
           </TabsContent>
         </Tabs>
       </div>
@@ -743,11 +754,9 @@ function HotelCard({
               {ciudad}
             </span>
           </div>
-          <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
+          <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-3">
             {nombre}
           </h3>
-          
-          {/* Estrellas en iconos dorados */}
           {estrellas > 0 && (
             <div className="flex items-center gap-1">
               {Array.from({ length: estrellas }).map((_, i) => (
@@ -1036,7 +1045,9 @@ function PresupuestoSection() {
             <div className="flex items-start gap-3">
               <Plane className="w-5 h-5 text-muted-foreground mt-1" />
               <div>
-                <p className="font-semibold text-foreground mb-1">Vuelos</p>
+                <p className="font-semibold text-foreground mb-1">
+                  Vuelos internacionales
+                </p>
                 <p className="text-sm text-foreground/70">
                   No se incluyen los vuelos internacionales ni el vuelo de conexión
                   Zúrich-Madrid.
@@ -1092,5 +1103,321 @@ function PresupuestoSection() {
         </CardContent>
       </Card>
     </div>
+  );
+}
+
+// ============================================================
+// ENTRADAS Y EXPERIENCIAS SECTION
+// ============================================================
+
+type EntradaItem = {
+  titulo: string;
+  fecha: string;
+  descripcion: string;
+  precio: string;
+  enlace: string;
+  enlace2?: string;
+  enlace2Label?: string;
+  imagen: string;
+  nota?: string;
+  esAlternativa?: boolean;
+};
+
+type DestinoEntradas = {
+  destino: string;
+  intro?: string;
+  items: EntradaItem[];
+  notaFinal?: string;
+};
+
+function EntradasSection() {
+  const destinos: DestinoEntradas[] = [
+    {
+      destino: "Toledo",
+      items: [
+        {
+          titulo: "Catedral Primada de Toledo",
+          fecha: "7 de octubre de 2026",
+          descripcion:
+            "Una de las catedrales góticas más importantes de Europa y el principal templo religioso de España durante siglos. En su interior se conservan obras de artistas como El Greco, Goya o Caravaggio.",
+          precio: "12 € por persona",
+          enlace: "https://catedralprimada.es",
+          imagen: "/images/catedral-toledo-entrada.webp",
+        },
+      ],
+    },
+    {
+      destino: "Segovia",
+      items: [
+        {
+          titulo: "Alcázar de Segovia",
+          fecha: "8 de octubre de 2026",
+          descripcion:
+            "Espectacular fortaleza medieval situada sobre un promontorio rocoso. Su silueta es una de las más reconocibles de España y ha inspirado numerosos castillos europeos.",
+          precio: "10 € por persona",
+          enlace: "https://www.alcazardesegovia.com",
+          imagen: "/images/alcazar-segovia-entrada.jpg",
+        },
+      ],
+    },
+    {
+      destino: "Siena",
+      items: [
+        {
+          titulo: "Catedral de Siena",
+          fecha: "13 de octubre de 2026",
+          descripcion:
+            "Una de las catedrales más impresionantes de Italia, famosa por su espectacular fachada de mármol y por el extraordinario pavimento decorado de su interior.",
+          precio: "10–13 € por persona",
+          enlace: "https://operaduomo.siena.it",
+          imagen: "/images/catedral-siena-entrada.jpg",
+        },
+      ],
+    },
+    {
+      destino: "Florencia",
+      items: [
+        {
+          titulo: "Palazzo Pitti y Jardines de Boboli",
+          fecha: "15 de octubre de 2026",
+          descripcion:
+            "Antigua residencia de la familia Médici y uno de los grandes complejos palaciegos del Renacimiento. Los jardines de Boboli representan uno de los ejemplos más importantes de jardines históricos italianos.",
+          precio: "16 € por persona",
+          enlace: "https://www.uffizi.it/en/pitti-palace",
+          imagen: "/images/palazzo-pitti-entrada.jpg",
+        },
+      ],
+    },
+    {
+      destino: "Lago di Como",
+      intro:
+        "Durante la estancia en el Lago di Como se puede realizar un paseo en barco para descubrir algunos de los pueblos más bellos del lago. A continuación se presentan dos opciones de tour privado.",
+      items: [
+        {
+          titulo: "Tour privado en barco con capitán",
+          fecha: "21 de octubre de 2026",
+          descripcion:
+            "Recorrido privado por el lago con capitán, con vistas a villas históricas y pueblos emblemáticos.",
+          precio: "300 € – 450 € por barco según duración",
+          enlace:
+            "https://www.getyourguide.com/es-es/nesso-l193890/lago-de-como-tour-en-barco-con-vino-y-capitan-t1186444?ranking_uuid=6eeb130c-5513-4bc9-b164-d5abaab5fbc6&_pc=1,2&date_from=2026-10-21",
+          imagen: "/images/como-barco-privado.jpg",
+        },
+        {
+          titulo: "Lake Como Boat Tour (empresa local)",
+          fecha: "21 de octubre de 2026",
+          descripcion:
+            "Empresa especializada en tours privados por el Lago di Como con itinerarios personalizados.",
+          precio: "350 € – 700 € por barco según duración",
+          enlace: "https://lakecomoboattour.it/es/los-tours/",
+          imagen: "/images/como-barco-local.webp",
+        },
+      ],
+      notaFinal:
+        "Si prefieren no realizar el paseo en barco, se pueden sugerir otras actividades tranquilas alrededor del lago.",
+    },
+    {
+      destino: "Villas del Lago di Como",
+      items: [
+        {
+          titulo: "Villa Carlotta",
+          fecha: "22 de octubre de 2026",
+          descripcion:
+            "Villa histórica del siglo XVIII rodeada por jardines botánicos espectaculares y con una importante colección de arte.",
+          precio: "15 € por persona",
+          enlace: "https://www.villacarlotta.it",
+          imagen: "/images/villa-carlotta-entrada.jpg",
+        },
+        {
+          titulo: "Villa del Balbianello",
+          fecha: "22 de octubre de 2026",
+          descripcion:
+            "Una de las villas más famosas del Lago di Como, situada en un promontorio con vistas espectaculares sobre el lago. Escenario de películas como Star Wars o James Bond. Puede visitarse como alternativa a Villa Carlotta o combinar ambas visitas.",
+          precio: "23 € por persona",
+          enlace: "https://fondoambiente.it/luoghi/villa-del-balbianello",
+          imagen: "/images/villa-balbianello-entrada.jpg",
+          esAlternativa: true,
+        },
+      ],
+    },
+    {
+      destino: "Alpes Suizos",
+      items: [
+        {
+          titulo: "Excursión a Monte Pilatus o Monte Rigi",
+          fecha: "24 de octubre de 2026",
+          descripcion:
+            "Ascenso panorámico en teleférico o tren cremallera con vistas espectaculares sobre el lago de Lucerna y los Alpes.",
+          precio: "80 € – 100 € por persona",
+          enlace: "https://www.pilatus.ch",
+          enlace2: "https://www.rigi.ch",
+          enlace2Label: "Monte Rigi",
+          imagen: "/images/monte-pilatus-entrada.webp",
+        },
+      ],
+    },
+    {
+      destino: "Lucerna",
+      items: [
+        {
+          titulo: "Mini crucero por el Lago de los Cuatro Cantones",
+          fecha: "23 de octubre de 2026",
+          descripcion:
+            "Breve crucero panorámico por el lago que rodea Lucerna, con vistas a los Alpes y al casco histórico de la ciudad. Duración aproximada: 1 hora.",
+          precio: "30 € – 40 € por persona",
+          enlace: "https://www.lakelucerne.ch",
+          imagen: "/images/lucerna-crucero.jpg",
+        },
+      ],
+    },
+    {
+      destino: "Zúrich",
+      items: [
+        {
+          titulo: "Lindt Home of Chocolate",
+          fecha: "25 de octubre de 2026 — 12:00",
+          descripcion:
+            "Museo interactivo dedicado al chocolate suizo con degustaciones y la famosa fuente de chocolate de nueve metros de altura.",
+          precio: "17 CHF por persona",
+          enlace: "https://www.lindt-home-of-chocolate.com",
+          imagen: "/images/lindt-chocolate.jpg",
+        },
+      ],
+    },
+  ];
+
+  return (
+    <div className="space-y-12">
+      {/* Encabezado de sección */}
+      <div className="max-w-3xl">
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-foreground">
+          Entradas y experiencias sugeridas
+        </h2>
+        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+          Para facilitar la organización del viaje, aquí se incluyen las visitas y experiencias que requieren entrada o reserva previa.
+          Las fechas indicadas corresponden al día en que están previstas dentro del itinerario, para que la compra pueda hacerse de forma rápida y sencilla.
+        </p>
+      </div>
+
+      {/* Destinos */}
+      <div className="space-y-16">
+        {destinos.map((destino, dIndex) => (
+          <div key={dIndex} className="space-y-6">
+            {/* Separador de destino */}
+            <div className="flex items-center gap-4">
+              <div className="h-px flex-1 bg-border" />
+              <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded">
+                <MapPin className="w-4 h-4 text-primary" />
+                <h3 className="font-display text-xl sm:text-2xl font-bold text-foreground">
+                  {destino.destino}
+                </h3>
+              </div>
+              <div className="h-px flex-1 bg-border" />
+            </div>
+
+            {/* Texto introductorio del destino */}
+            {destino.intro && (
+              <p className="text-base text-muted-foreground leading-relaxed max-w-3xl italic border-l-2 border-primary/40 pl-4">
+                {destino.intro}
+              </p>
+            )}
+
+            {/* Tarjetas de entradas */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {destino.items.map((item, iIndex) => (
+                <EntradaCard key={iIndex} item={item} />
+              ))}
+            </div>
+
+            {/* Nota final del destino */}
+            {destino.notaFinal && (
+              <div className="flex items-start gap-3 bg-secondary/50 border border-border rounded p-4 max-w-2xl">
+                <Info className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {destino.notaFinal}
+                </p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function EntradaCard({ item }: { item: EntradaItem }) {
+  return (
+    <Card className="overflow-hidden border-border luxury-shadow hover:shadow-xl transition-all duration-400 bg-card group">
+      {/* Imagen */}
+      <div className="relative h-52 sm:h-60 overflow-hidden">
+        <img
+          src={item.imagen}
+          alt={item.titulo}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+        
+        {/* Badge de alternativa */}
+        {item.esAlternativa && (
+          <div className="absolute top-3 right-3 bg-primary/90 text-primary-foreground text-xs px-3 py-1 rounded font-semibold uppercase tracking-wide">
+            Alternativa
+          </div>
+        )}
+
+        {/* Fecha sobre imagen */}
+        <div className="absolute bottom-3 left-4 flex items-center gap-2">
+          <CalendarDays className="w-4 h-4 text-white/80" />
+          <span className="text-xs text-white/90 font-medium">{item.fecha}</span>
+        </div>
+      </div>
+
+      {/* Contenido */}
+      <CardContent className="p-5 sm:p-6 space-y-4">
+        {/* Título */}
+        <h4 className="font-display text-xl sm:text-2xl font-bold text-foreground leading-tight">
+          {item.titulo}
+        </h4>
+
+        {/* Descripción */}
+        <p className="text-sm text-foreground/75 leading-relaxed">
+          {item.descripcion}
+        </p>
+
+        {/* Precio */}
+        <div className="flex items-center gap-3 bg-primary/8 border border-primary/15 rounded px-4 py-3">
+          <Euro className="w-5 h-5 text-primary flex-shrink-0" />
+          <div>
+            <p className="text-xs text-primary font-semibold uppercase tracking-wide mb-0.5">
+              Precio aproximado
+            </p>
+            <p className="text-sm font-semibold text-foreground">{item.precio}</p>
+          </div>
+        </div>
+
+        {/* Botones de enlace */}
+        <div className="flex flex-wrap gap-3 pt-1">
+          <a
+            href={item.enlace}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2.5 rounded text-sm font-semibold hover:bg-primary/90 transition-colors duration-200"
+          >
+            <ExternalLink className="w-4 h-4" />
+            {item.enlace2 ? "Monte Pilatus" : "Comprar / Información"}
+          </a>
+          {item.enlace2 && (
+            <a
+              href={item.enlace2}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-primary text-primary px-4 py-2.5 rounded text-sm font-semibold hover:bg-primary/10 transition-colors duration-200"
+            >
+              <ExternalLink className="w-4 h-4" />
+              {item.enlace2Label || "Más información"}
+            </a>
+          )}
+        </div>
+      </CardContent>
+    </Card>
   );
 }
