@@ -558,7 +558,7 @@ function HotelesSection() {
       ciudad: "Ferry Barcelona-Italia",
       ubicacion: "Travesía marítima",
       tipo: "Junior Suite, desayuno",
-      precio: "1.280 €",
+      precio: "550 €",
       noches: 1,
       fechaInicio: "09/10/2026",
       fechaFin: "10/10/2026",
