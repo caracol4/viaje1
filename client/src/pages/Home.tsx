@@ -7,7 +7,7 @@
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Clock, Hotel, DollarSign, Mail, Phone, MapPinIcon, Car, Utensils, Ticket, Coffee, RefreshCw, Info, Plane, FileText, AlertCircle, ExternalLink, CalendarDays, Euro } from "lucide-react";
+import { MapPin, Clock, Hotel, DollarSign, Mail, Phone, MapPinIcon, Car, Utensils, Ticket, Coffee, RefreshCw, Info, Plane, FileText, AlertCircle, ExternalLink, CalendarDays, Euro, Tag } from "lucide-react";
 import { ImageCarousel } from "@/components/ImageCarousel";
 
 export default function Home() {
@@ -251,7 +251,6 @@ function ItinerarioSection() {
       descripcion:
         "Inmersión artística con guía experto exclusivamente para la Galería de los Uffizi (Botticelli, Da Vinci, Rafael). La visita a la Galleria dell'Accademia se realizará por libre. Existe la posibilidad de visitar The Mall, el outlet de lujo más exclusivo de la Toscana, con las mejores firmas internacionales.",
       entradas: "Galería Uffizi y Galería de la Academia (acceso prioritario)",
-      guiaLocal: "Sí (guía oficial de Florencia)",
     },
     {
       dia: 11,
@@ -439,7 +438,6 @@ function DiaCard({
   tiempo,
   descripcion,
   entradas,
-  guiaLocal,
 }: {
   dia: number;
   fecha: string;
@@ -451,7 +449,6 @@ function DiaCard({
   tiempo?: string;
   descripcion: string;
   entradas?: string;
-  guiaLocal?: string;
 }) {
   return (
     <Card className="overflow-hidden border-border luxury-shadow hover:shadow-xl transition-all duration-400 bg-card">
@@ -518,42 +515,17 @@ function DiaCard({
           <p className="text-foreground/85 leading-relaxed text-sm sm:text-base">{descripcion}</p>
 
           {/* Servicios con iconos horizontales minimalistas */}
-          {(entradas || guiaLocal) && (
+          {entradas && (
             <div className="flex flex-wrap gap-4 pt-3">
-              {entradas && (
-                <div className="flex items-center gap-3 bg-primary/10 px-4 py-3 rounded border border-primary/20">
-                  <Ticket className="w-5 h-5 text-primary flex-shrink-0" />
-                  <div>
-                    <p className="text-xs text-primary font-semibold uppercase tracking-wide mb-0.5">
-                      Entradas
-                    </p>
-                    <p className="text-sm text-foreground">{entradas}</p>
-                  </div>
+              <div className="flex items-center gap-3 bg-primary/10 px-4 py-3 rounded border border-primary/20">
+                <Ticket className="w-5 h-5 text-primary flex-shrink-0" />
+                <div>
+                  <p className="text-xs text-primary font-semibold uppercase tracking-wide mb-0.5">
+                    Entradas
+                  </p>
+                  <p className="text-sm text-foreground">{entradas}</p>
                 </div>
-              )}
-              {guiaLocal && (
-                <div className="flex items-center gap-3 bg-secondary/50 px-4 py-3 rounded border border-secondary">
-                  <svg
-                    className="w-5 h-5 text-foreground flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
-                  <div>
-                    <p className="text-xs text-foreground font-semibold uppercase tracking-wide mb-0.5">
-                      Guía local
-                    </p>
-                    <p className="text-sm text-foreground/80">{guiaLocal}</p>
-                  </div>
-                </div>
-              )}
+              </div>
             </div>
           )}
         </div>
@@ -571,6 +543,8 @@ function HotelesSection() {
       ciudad: "Madrid",
       ubicacion: "Centro - Gran Vía",
       tipo: "Deluxe Junior Suite",
+      precio: "1.294 €",
+      noches: 3,
       fechaInicio: "06/10/2026",
       fechaFin: "09/10/2026",
       descripcion:
@@ -583,7 +557,9 @@ function HotelesSection() {
       estrellas: 0,
       ciudad: "Ferry Barcelona-Italia",
       ubicacion: "Travesía marítima",
-      tipo: "Junior Suite Exterior",
+      tipo: "Junior Suite, desayuno",
+      precio: "1.280 €",
+      noches: 1,
       fechaInicio: "09/10/2026",
       fechaFin: "10/10/2026",
       descripcion: "Travesía mediterránea nocturna con suite exterior y desayuno incluido a bordo.",
@@ -595,11 +571,13 @@ function HotelesSection() {
       estrellas: 5,
       ciudad: "Toscana",
       ubicacion: "Castelnuovo Berardenga (Chianti)",
-      tipo: "Doble Deluxe",
+      tipo: "Suite Junior",
+      precio: "3.114 €",
+      noches: 4,
       fechaInicio: "10/10/2026",
       fechaFin: "14/10/2026",
       descripcion:
-        "Un refugio señorial del siglo XIV restaurado con un gusto exquisito. Esta habitación Doble Deluxe ofrece amplitud y diseño refinado en un entorno de viñedos, complementado por un spa de clase mundial y gastronomía toscana de alta excelencia.",
+        "Un refugio señorial del siglo XIV restaurado con un gusto exquisito. Esta Suite Junior ofrece amplitud y diseño refinado en un entorno de viñedos, complementado por un spa de clase mundial y gastronomía toscana de alta excelencia.",
       imagenPrincipal: "/images/borgo-fachada.jpg",
       imagenHabitacion: "/images/borgo-hab.jpg",
     },
@@ -608,7 +586,9 @@ function HotelesSection() {
       estrellas: 4,
       ciudad: "Florencia",
       ubicacion: "Centro Histórico - Via de' Tornabuoni",
-      tipo: "Doble Deluxe",
+      tipo: "Habitación doble deluxe",
+      precio: "861 €",
+      noches: 2,
       fechaInicio: "14/10/2026",
       fechaFin: "16/10/2026",
       descripcion:
@@ -617,11 +597,13 @@ function HotelesSection() {
       imagenHabitacion: "/images/florencia-hab.jpg",
     },
     {
-      nombre: "Hotel The Square Milano Duomo",
+      nombre: "Hotel The Square Milano Duomo – Preferred Hotels & Resorts",
       estrellas: 4,
       ciudad: "Milán",
       ubicacion: "Centro - Junto al Duomo",
-      tipo: "Habitación Doble Executive",
+      tipo: "Habitación doble deluxe con balcón",
+      precio: "1.209 €",
+      noches: 2,
       fechaInicio: "16/10/2026",
       fechaFin: "18/10/2026",
       descripcion:
@@ -631,24 +613,28 @@ function HotelesSection() {
       lujoSuperior: true,
     },
     {
-      nombre: "Bianca Relais (by R Collection)",
+      nombre: "Bianca Relais, by R Collection Hotels",
       estrellas: 5,
       ciudad: "Lago di Como",
       ubicacion: "Frente al Lago (Oggiono)",
-      tipo: "Suite Junior con Vistas al Lago",
-      fechaInicio: "18/10/2026",
+      tipo: "Suite total",
+      precio: "1.388 €",
+      noches: 3,
+      fechaInicio: "19/10/2026",
       fechaFin: "21/10/2026",
       descripcion:
-        "La máxima expresión del lujo contemporáneo a orillas del lago. Esta Suite Junior ofrece vistas frontales al agua en un entorno íntimo y exclusivo de solo 10 habitaciones, donde el diseño de vanguardia se funde con la serenidad del paisaje alpino.",
+        "La máxima expresión del lujo contemporáneo a orillas del lago. Esta Suite Total ofrece vistas frontales al agua en un entorno íntimo y exclusivo de solo 10 habitaciones, donde el diseño de vanguardia se funde con la serenidad del paisaje alpino.",
       imagenPrincipal: "/images/como-fachada.jpg",
       imagenHabitacion: "/images/como-hab.jpg",
     },
     {
-      nombre: "Radisson Blu Lucerne",
+      nombre: "Radisson Blu Hotel",
       estrellas: 4,
       ciudad: "Lucerna",
       ubicacion: "Centro - Frente al Lago",
-      tipo: "Habitación Premium",
+      tipo: "Habitación premium junto al lago",
+      precio: "1.505 €",
+      noches: 3,
       fechaInicio: "21/10/2026",
       fechaFin: "24/10/2026",
       descripcion:
@@ -657,11 +643,13 @@ function HotelesSection() {
       imagenHabitacion: "/images/lucerna-hab.jpg",
     },
     {
-      nombre: "Central Plaza Hotel",
+      nombre: "Central Plaza",
       estrellas: 4,
       ciudad: "Zúrich",
       ubicacion: "Centro - Junto al Río Limmat",
-      tipo: "Corner Junior Suite",
+      tipo: "Suite con vistas al río",
+      precio: "1.173 €",
+      noches: 3,
       fechaInicio: "24/10/2026",
       fechaFin: "27/10/2026",
       descripcion:
@@ -675,6 +663,8 @@ function HotelesSection() {
       ciudad: "Madrid",
       ubicacion: "Centro - Gran Vía",
       tipo: "Deluxe Junior Suite",
+      precio: "593 €",
+      noches: 2,
       fechaInicio: "27/10/2026",
       fechaFin: "29/10/2026",
       descripcion:
@@ -716,6 +706,8 @@ function HotelCard({
   ciudad,
   ubicacion,
   tipo,
+  precio,
+  noches,
   fechaInicio,
   fechaFin,
   descripcion,
@@ -728,6 +720,8 @@ function HotelCard({
   ciudad: string;
   ubicacion: string;
   tipo: string;
+  precio?: string;
+  noches?: number;
   fechaInicio: string;
   fechaFin: string;
   descripcion: string;
@@ -804,10 +798,21 @@ function HotelCard({
                 Estancia
               </p>
               <p className="text-sm text-foreground font-medium">
-                {fechaInicio} - {fechaFin}
+                {fechaInicio} – {fechaFin}{noches ? ` · ${noches} ${noches === 1 ? 'noche' : 'noches'}` : ''}
               </p>
             </div>
           </div>
+          {precio && (
+            <div className="flex items-start gap-3">
+              <Tag className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+              <div>
+                <p className="text-xs text-muted-foreground uppercase tracking-wide mb-0.5">
+                  Precio
+                </p>
+                <p className="text-sm text-foreground font-semibold">{precio}</p>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Descripción con espaciado generoso */}
@@ -903,7 +908,7 @@ function PresupuestoSection() {
           Presupuesto y condiciones del viaje
         </h2>
         <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-          Tras el último ajuste, hemos logrado reducir el coste al eliminar la mayoría de los guías locales. No obstante, hemos incrementado ligeramente la partida hotelera para asegurar reservas con opciones de cancelación flexible. Estas se podrán abonar más adelante, permitiendo realizar ahora únicamente el desembolso de los dos activos más importantes del viaje. Este presupuesto se ha elaborado teniendo en cuenta sus gustos y formas de viajar, y sigue estando abierto a cualquier ajuste final que deseen realizar juntos.
+          Hemos incrementado ligeramente la partida hotelera para asegurar reservas con opciones de cancelación flexible. Estas se podrán abonar más adelante, permitiendo realizar ahora únicamente el desembolso de los dos activos más importantes del viaje. Este presupuesto se ha elaborado teniendo en cuenta sus gustos y formas de viajar, y sigue estando abierto a cualquier ajuste final que deseen realizar juntos.
         </p>
       </div>
 
@@ -915,7 +920,7 @@ function PresupuestoSection() {
               Importe total del viaje
             </p>
             <p className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-primary mb-2">
-              29.100 €
+              32.748,50 €
             </p>
             <p className="text-sm text-muted-foreground">
               Presupuesto para 2 personas
@@ -1002,19 +1007,6 @@ function PresupuestoSection() {
         <Card className="border-border">
           <CardContent className="p-6 space-y-4">
             <div className="flex items-start gap-3">
-              <Coffee className="w-5 h-5 text-primary mt-1" />
-              <div>
-                <p className="font-semibold text-foreground mb-1">
-                  Régimen de estancia
-                </p>
-                <p className="text-sm text-foreground/70">
-                  El presupuesto incluye siempre alojamiento y desayuno en todos los
-                  hoteles seleccionados.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3">
               <RefreshCw className="w-5 h-5 text-primary mt-1" />
               <div>
                 <p className="font-semibold text-foreground mb-1">
@@ -1085,17 +1077,6 @@ function PresupuestoSection() {
                 <p className="font-semibold text-foreground">Gastos de gestión</p>
                 <p className="text-sm text-foreground/70">
                   La cancelación del viaje conlleva un cargo fijo de 1.500 €.
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-destructive mt-1">•</span>
-              <div>
-                <p className="font-semibold text-foreground">Reembolsos</p>
-                <p className="text-sm text-foreground/70">
-                  Los importes a devolver dependerán de las políticas específicas de
-                  cada proveedor (hoteles y transportes). Nos comprometemos a
-                  gestionar la recuperación del máximo importe posible en cada caso.
                 </p>
               </div>
             </div>
@@ -1178,13 +1159,22 @@ function EntradasSection() {
       destino: "Florencia",
       items: [
         {
-          titulo: "Palazzo Pitti y Jardines de Boboli",
+          titulo: "Galería de los Uffizi",
           fecha: "15 de octubre de 2026",
           descripcion:
-            "Antigua residencia de la familia Médici y uno de los grandes complejos palaciegos del Renacimiento. Los jardines de Boboli representan uno de los ejemplos más importantes de jardines históricos italianos.",
-          precio: "16 € por persona",
-          enlace: "https://www.uffizi.it/en/pitti-palace",
-          imagen: "/images/palazzo-pitti-entrada.jpg",
+            "Uno de los museos más importantes del mundo, con obras maestras del Renacimiento italiano: Botticelli, Leonardo da Vinci, Rafael, Miguel Ángel y Caravaggio. Acceso preferente con entrada sin colas.",
+          precio: "20 € por persona",
+          enlace: "https://www.uffizi.it/en/the-uffizi",
+          imagen: "/images/uffizzi.webp",
+        },
+        {
+          titulo: "Galería de la Academia",
+          fecha: "15 de octubre de 2026",
+          descripcion:
+            "Hogar del David de Miguel Ángel, una de las esculturas más célebres de la historia del arte. La galería alberga también una extraordinaria colección de pinturas florentinas del siglo XIII al XVI.",
+          precio: "12 € por persona",
+          enlace: "https://www.galleriaaccademiafirenze.it",
+          imagen: "/images/uffizzi2.jpeg",
         },
       ],
     },
